@@ -5,16 +5,16 @@
 struct Stack
 {
 	int data[N];
-	int top; //±êÊ¶Õ»¶¥
+	int top; //æ ‡è¯†æ ˆé¡¶
 };
 typedef struct Stack stack;
-// ³õÊ¼»¯Õ»
+// åˆå§‹åŒ–æ ˆ
 void init(stack* p)
 {
 	p->top = -1;
-	memset(p->data, 0, sizeof(int) * N); // Êı¾İÇå0
+	memset(p->data, 0, sizeof(int) * N); // æ•°æ®æ¸…0
 }
-// ÅĞ¶ÏÕ»ÊÇ·ñ¿Õ
+// åˆ¤æ–­æ ˆæ˜¯å¦ç©º
 int isempty(stack* p)
 {
 	if (p->top == -1)
@@ -23,21 +23,21 @@ int isempty(stack* p)
 	}
 	return 0;
 }
-// ÅĞ¶ÏÕ»ÊÇ·ñÒç³ö
+// åˆ¤æ–­æ ˆæ˜¯å¦æº¢å‡º
 int isfull(stack* p)
 {
-	if (p == N - 1)
+	if (p->top == N - 1)
 	{
 		return 1;
 	}
 	return 0;
 }
-// »ñÈ¡Õ»¶¥ÔªËØ
+// è·å–æ ˆé¡¶å…ƒç´ 
 int gettop(stack* p)
 {
 	return p->data[p->top];
 }
-// ÈëÕ»
+// å…¥æ ˆ
 void push(stack* p, int key)
 {
 	if (isfull(p)==1)
@@ -50,7 +50,7 @@ void push(stack* p, int key)
 		p->data[p->top] = key;
 	}
 }
-// ³öÕ»
+// å‡ºæ ˆ
 void pop(stack* p)
 {
 	if (isempty(p) == 1)
@@ -70,7 +70,7 @@ void show(stack* p)
 	}
 	else
 	{
-		printf("\nÕ»µÄÊı¾İÎª\n");
+		printf("\næ ˆçš„æ•°æ®ä¸º\n");
 		for (int i = 0; i <= p->top; i++)
 		{
 			printf("%d ", p->data[i]);
