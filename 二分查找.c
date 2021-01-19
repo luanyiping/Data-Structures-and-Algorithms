@@ -9,7 +9,7 @@ int main()
 	scanf("%d", &key);
 	while (left <= right)
 	{
-		int mid = (left + right) / 2;
+		int mid = left+(right-left)/2;
 		if (arr[mid] < key)
 		{
 			left = mid + 1;
@@ -20,12 +20,12 @@ int main()
 		}
 		else
 		{
-			printf("找到元素，下标为:%d\n", mid);
+			printf("鎵惧埌鍏冪礌锛屼笅鏍囦负:%d\n", mid);
 			break;
 		}
 	}
 	if (left > right)
 	{
-		printf("没有找到该元素\n");
+		printf("娌℃湁鎵惧埌璇ュ厓绱燶n");
 	}
 }
